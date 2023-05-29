@@ -7,7 +7,8 @@ export default defineConfig({
     server: {
         proxy: {
             "/api/items": {
-                target: import.meta.env.VITE_BACKEND_SERVER,
+                // target: import.meta.env.VITE_BACKEND_SERVER,
+                target: "https://shoppinglist-api-8wio.onrender.com/",
                 changeOrigin: true,
             },
         },
