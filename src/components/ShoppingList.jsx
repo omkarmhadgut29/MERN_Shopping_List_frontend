@@ -15,9 +15,11 @@ function ShoppingList() {
 
     useEffect(() => {
         dispatch(setItemLoading());
-        axios.get("/api/items").then((res) => {
-            dispatch(loadItems(res.data));
-        });
+        axios
+            .get("https://shoppinglist-api-8wio.onrender.com/api/items")
+            .then((res) => {
+                dispatch(loadItems(res.data));
+            });
     }, [dispatch]);
 
     const items = useSelector(getItems);
