@@ -1,6 +1,0 @@
-[[redirects]]
-  from = "/api/items"
-  to = "https://shoppinglist-api-8wio.onrender.com/"
-  status = 200
-  force = true
-  headers = {X-From = "Netlify"}
