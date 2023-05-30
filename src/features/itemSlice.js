@@ -7,10 +7,13 @@ const initialState = {
 };
 
 export const addItem = createAsyncThunk(
-    "https://shoppinglist-api-8wio.onrender.com/api/items",
+    "https://mernshoppinglist-production.up.railway.app/api/items",
     async (item) => {
         const response = await axios
-            .post("https://shoppinglist-api-8wio.onrender.com/api/items", item)
+            .post(
+                "https://mernshoppinglist-production.up.railway.app/api/items",
+                item
+            )
             .then((res) => {
                 return res.data;
             });
@@ -29,7 +32,7 @@ export const itemSlice = createSlice({
         deleteItem: (state, action) => {
             axios
                 .delete(
-                    `https://shoppinglist-api-8wio.onrender.com/api/items/${action.payload}`
+                    `https://mernshoppinglist-production.up.railway.app/api/items/${action.payload}`
                 )
                 .then((res) => {
                     return res.data;

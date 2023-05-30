@@ -16,7 +16,7 @@ function ShoppingList() {
     useEffect(() => {
         dispatch(setItemLoading());
         axios
-            .get("https://shoppinglist-api-8wio.onrender.com/api/items")
+            .get("https://mernshoppinglist-production.up.railway.app/api/items")
             .then((res) => {
                 dispatch(loadItems(res.data));
             });
