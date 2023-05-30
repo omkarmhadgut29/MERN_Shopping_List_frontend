@@ -6,17 +6,12 @@ const initialState = {
     loading: false,
 };
 
-export const addItem = createAsyncThunk(
-    "https://shoppinglist-api-8wio.onrender.com/api/items",
-    async (item) => {
-        const response = await axios
-            .post("https://shoppinglist-api-8wio.onrender.com/api/items", item)
-            .then((res) => {
-                return res.data;
-            });
-        return response;
-    }
-);
+export const addItem = createAsyncThunk("/api/items", async (item) => {
+    const response = await axios.post("/api/items", item).then((res) => {
+        return res.data;
+    });
+    return response;
+});
 
 export const itemSlice = createSlice({
     name: "item",
@@ -27,13 +22,9 @@ export const itemSlice = createSlice({
             state.loading = false;
         },
         deleteItem: (state, action) => {
-            axios
-                .delete(
-                    `https://shoppinglist-api-8wio.onrender.com/api/items/${action.payload}`
-                )
-                .then((res) => {
-                    return res.data;
-                });
+            axios.delete(`/api/items/${action.payload}`).then((res) => {
+                return res.data;
+            });
             state.items = state.items.filter(
                 (item) => item._id !== action.payload
             );
