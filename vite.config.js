@@ -12,6 +12,8 @@ export default defineConfig({
                 changeOrigin: true,
             },
         },
+        host: "0.0.0.0",
+        port: import.meta.env?.PORT || 5646,
     },
     plugins: [react()],
 });
