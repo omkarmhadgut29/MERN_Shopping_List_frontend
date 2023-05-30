@@ -6,11 +6,12 @@ import react from "@vitejs/plugin-react";
 export default defineConfig({
     server: {
         proxy: {
-            "/api/items": {
-                // target: import.meta.env.VITE_BACKEND_SERVER,
-                target: "https://mernshoppinglist-production.up.railway.app",
-                changeOrigin: true,
-            },
+            // "/api/items": {
+            //     // target: import.meta.env.VITE_BACKEND_SERVER,
+            //     target: "https://mernshoppinglist-production.up.railway.app",
+            //     changeOrigin: true,
+            // },
+            "/api/items": "https://mernshoppinglist-production.up.railway.app",
         },
         host: "0.0.0.0",
         port: import.meta.env?.PORT || 5646,
