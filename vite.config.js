@@ -13,7 +13,7 @@ export default defineConfig({
             // },
             "/api/items": "https://mernshoppinglist-production.up.railway.app",
         },
-        host: "0.0.0.0",
+        host: true,
         port: import.meta.env?.PORT || 5646,
     },
     plugins: [react()],
